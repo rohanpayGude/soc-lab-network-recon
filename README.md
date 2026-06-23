@@ -2,54 +2,97 @@
 
 ## Overview
 
-This project documents the creation of a practical SOC home lab environment using VirtualBox and Ubuntu systems.
+This project simulates a real-world SOC (Security Operations Center) workflow using a controlled virtual lab environment.
 
-The lab simulates an internal enterprise environment where a security analyst performs asset discovery, service enumeration, and basic risk assessment.
-
----
-
-# Lab Architecture
-
-## Analyst VM
-
-Role:
-Security Analyst Workstation
-
-IP:
-192.168.56.102
-
-Tools:
-- Nmap
-
-
-## Target VM
-
-Role:
-Simulated Linux Server Asset
-
-OS:
-Ubuntu Server
-
-IP:
-192.168.56.101
-
-
-Network:
-Host-only isolated network
+It demonstrates how a security analyst identifies active hosts, discovers exposed services, and evaluates potential security risks using standard tools like Nmap.
 
 ---
 
-# Objectives
+## Lab Objective
 
-- Build an isolated cybersecurity lab
-- Perform internal network reconnaissance
-- Identify exposed services
-- Analyze security risks
-- Document findings like a SOC analyst
+To build a practical cybersecurity environment and perform:
+
+- Internal network discovery
+- Service enumeration
+- Security analysis of exposed services
+- Documentation of findings in SOC format
 
 ---
 
-# Tools Used
+## Lab Architecture
+
+### Analyst VM
+- Role: Security Analyst Workstation
+- IP Address: 192.168.56.102
+- Tools: Nmap
+
+### Target VM
+- Role: Simulated Server Asset
+- OS: Ubuntu Server
+- IP Address: 192.168.56.101
+
+### Network
+- Type: Host-only Adapter
+- Purpose: Isolated internal lab communication
+
+---
+
+## Project Workflow
+
+1. Created VirtualBox lab environment  
+2. Configured Host-only networking  
+3. Installed Ubuntu Server on target VM  
+4. Enabled SSH service on target machine  
+5. Performed internal network reconnaissance  
+6. Identified active services using Nmap  
+7. Documented findings and analysis  
+
+---
+
+## Key Finding
+
+### SSH Service Exposure
+
+Port:
+22/tcp
+
+Service:
+SSH (Secure Shell)
+
+Risk Level:
+Medium
+
+---
+
+### Evidence
+
+Analyst VM IP configuration:
+
+![Analyst IP](screenshots/analyst-ip.png)
+
+Target VM IP configuration:
+
+![Target IP](screenshots/target-ip.png)
+
+Nmap scan confirming SSH exposure:
+
+![Nmap Scan](screenshots/nmap-scan.png)
+
+---
+
+### Interpretation
+
+The target system exposes an SSH service, allowing remote administrative access.
+
+In real-world environments, this requires strict security controls such as:
+- Strong authentication mechanisms
+- Monitoring of login attempts
+- Restricting unauthorized access
+- Regular patching and updates
+
+---
+
+## Tools Used
 
 - VirtualBox
 - Ubuntu Linux
@@ -59,53 +102,37 @@ Host-only isolated network
 
 ---
 
-# Project Workflow
+## Skills Demonstrated
 
-1. Created virtual lab environment
-2. Configured isolated networking
-3. Enabled SSH service on target machine
-4. Performed Nmap reconnaissance
-5. Analyzed discovered services
-6. Created SOC-style report
-
----
-
-# Key Finding
-
-## SSH Service Exposure
-
-Port:
-22/tcp
-
-Service:
-SSH
-
-Risk:
-Medium
-
-Reason:
-
-SSH provides remote administration capability and requires proper security controls.
-
----
-
-# Skills Demonstrated
-
-- Linux administration
-- Virtual networking
+- Virtual lab setup
+- Network configuration (Host-only networking)
 - Service enumeration
-- Nmap usage
-- Basic vulnerability assessment
-- Technical documentation
+- Security analysis
+- SOC-style documentation
+- Basic risk assessment
 
 ---
 
-# Future Improvements
+## Real-World Relevance
 
-Planned additions:
+SSH is one of the most commonly exposed services in enterprise environments.
 
-- Log monitoring
-- SIEM integration
+SOC analysts continuously monitor SSH activity to detect:
+- Unauthorized access attempts
+- Brute-force attacks
+- Misconfigured systems
+- Internal asset exposure
+
+This project simulates the reconnaissance phase used in real security operations.
+
+---
+
+## Conclusion
+
+This lab demonstrates the foundational workflow of a SOC analyst: identifying assets, discovering exposed services, and evaluating security risks in a controlled environment.
+
+It serves as a base for more advanced projects involving:
 - Vulnerability scanning
+- Log analysis
+- SIEM integration
 - Attack simulation
-- Detection engineering
