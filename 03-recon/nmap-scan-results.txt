@@ -1,0 +1,23 @@
+Nmap Scan - Target VM
+
+Target:
+192.168.56.101
+
+Command used:
+
+sudo nmap -sS -sV 192.168.56.101
+
+
+Result:
+
+Host is up.
+
+PORT     STATE     SERVICE
+22/tcp   open      ssh
+
+
+Service detected:
+SSH (Secure Shell)
+
+Scan purpose:
+Internal network reconnaissance and service enumeration.
