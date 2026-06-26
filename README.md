@@ -127,6 +127,40 @@ This project simulates the reconnaissance phase used in real security operations
 
 ---
 
+## Vulnerability Assessment
+
+A vulnerability scan was performed against the target Ubuntu Server using Nmap.
+
+### Finding
+
+SSH service exposure detected.
+
+### Details
+
+Port:
+22/tcp
+
+Service:
+SSH
+
+Version:
+OpenSSH 10.2p1 Ubuntu
+
+### Risk
+
+SSH provides remote administrative access. If not properly secured, it can become a target for unauthorized access attempts.
+
+### Recommendation
+
+- Use strong authentication methods
+- Monitor SSH login attempts
+- Restrict unnecessary access
+
+### Evidence
+
+![Vulnerability Scan](screenshots/vuln-scan.png)
+
+
 ## Conclusion
 
 This lab demonstrates the foundational workflow of a SOC analyst: identifying assets, discovering exposed services, and evaluating security risks in a controlled environment.
